@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SearchArea from "../Search/SearchArea";
+import BookList from "../BookList/BookList";
 
 class Books extends Component {
   state = {
@@ -15,6 +16,9 @@ class Books extends Component {
       .then(response => response.json())
       .then(json => {
         console.log(json);
+        this.setState({
+          books: [...json.items]
+        });
       });
   };
   handleSearch = e => {
@@ -32,6 +36,7 @@ class Books extends Component {
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
         />
+        <BookList books={this.state.books} />
       </div>
     );
   }
