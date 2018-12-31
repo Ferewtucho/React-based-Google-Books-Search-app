@@ -1,11 +1,11 @@
 import React from "react";
 import "./SearchArea.css";
 
-function SearchArea() {
+function SearchArea(props) {
   return (
     <div className="search-area">
-      <form action="">
-        <input type="text" />
+      <form onSubmit={props.searchBook} action="">
+        <input onChange={props.handleSearch} type="text" />
         <button type="submit">Search</button>
       </form>
     </div>
