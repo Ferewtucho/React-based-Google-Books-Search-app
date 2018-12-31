@@ -4,7 +4,9 @@ import "./BookCard.css";
 function BookCard(props) {
   return (
     <div className="card-container">
-      <img src={props.img} alt="" />
+      <a href={props.link} target="_blank">
+        <img src={props.img} alt="" />
+      </a>
       <div className="desc">
         <h2>{props.title}</h2>
         <h3>Author : {props.author}</h3>

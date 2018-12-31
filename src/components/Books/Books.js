@@ -16,7 +16,7 @@ class Books extends Component {
     )
       .then(response => response.json())
       .then(json => {
-        // console.log(json);
+        console.log(json);
         const cleanData = this.cleanData(json);
         this.setState({
           books: cleanData

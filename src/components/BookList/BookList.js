@@ -14,6 +14,7 @@ function BookList(props) {
             author={book.volumeInfo.authors}
             publisheddate={book.volumeInfo.publishedDate}
             description={book.volumeInfo.description}
+            link={book.volumeInfo.infoLink}
           />
         );
       })}
