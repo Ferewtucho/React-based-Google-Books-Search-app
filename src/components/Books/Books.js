@@ -25,7 +25,11 @@ class Books extends Component {
         console.log(json);
         const cleanData = this.cleanData(json);
         this.setState({
-          isLoading: false,
+          isLoading: setInterval(() => {
+            this.setState({
+              isLoading: false
+            });
+          }, 1500),
           books: cleanData
         });
       });
