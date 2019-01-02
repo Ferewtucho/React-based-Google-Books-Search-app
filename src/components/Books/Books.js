@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import SearchArea from "../Search/SearchArea";
 import BookList from "../BookList/BookList";
+import Img from "./img/loading.gif";
 
 class Books extends Component {
   state = {
     books: [],
     searchField: "",
-    sort: ""
+    sort: "",
+    isLoading: false
   };
 
   searchBook = e => {
     e.preventDefault();
+    this.setState({
+      isLoading: true
+    });
+
     fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchField}`
     )
@@ -19,6 +25,7 @@ class Books extends Component {
         console.log(json);
         const cleanData = this.cleanData(json);
         this.setState({
+          isLoading: false,
           books: cleanData
         });
       });
@@ -70,7 +77,9 @@ class Books extends Component {
       }
       return sortedBooks;
     });
-    return (
+    const text = this.state.isLoading ? (
+      <img src={Img} alt="loading" />
+    ) : (
       <div>
         <SearchArea
           searchBook={this.searchBook}
@@ -80,6 +89,7 @@ class Books extends Component {
         <BookList books={sortedBooks} />
       </div>
     );
+    return <div>{text}</div>;
   }
 }
 
