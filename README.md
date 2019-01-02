@@ -1,3 +1,11 @@
+##BookSearch-React
+
+<p>A simple Book Search app using React JS and Google Books API</p>
+<p>You cans search a book also sort them from newest to older or older to the newest.
+<br>
+<h6><a href = "https://frozen-dawn-32743.herokuapp.com/" target= "_blank">Click here to see the demo</a>.</h6>
+<hr></hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
