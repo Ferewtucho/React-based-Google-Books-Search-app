@@ -3,7 +3,7 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div>
+    <div className="jumbotron">
       <header>
         <h1>React Book Search</h1>
       </header>
