@@ -12,7 +12,7 @@ function SearchArea(props) {
             className="form-control"
           />
         </div>
-        |
+
         <button type="submit" className="btn btn-primary mb-2 btn-dark">
           Search
         </button>

@@ -8,6 +8,9 @@
   padding: 20px;
   width: 600px;
 }
+.mb-2 {
+  margin-left: 4px;
+}
 @media only screen and (max-width: 768px) {
   .form-inline {
     left: 0;
